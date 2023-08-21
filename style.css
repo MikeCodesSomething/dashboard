@@ -1,0 +1,43 @@
+* {
+    border: 1px solid black;
+}
+
+.grid-container {
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    
+}
+
+.sidebar {
+    grid-column: 1;
+    border: 1px solid red;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+img.logo {
+    height: auto;
+    width: min(60px,25%);
+    object-fit: contain;
+    margin-left: 5px;
+}
+
+.menu-item {
+    display: flex;
+}
+
+h1 {
+    font-size: min(2rem, 3vw);
+}
+
+h2 {
+    margin: 5px 0px;
+}
+
+.menu {
+    margin: 40px 10px;
+}
