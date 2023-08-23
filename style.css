@@ -1,6 +1,23 @@
-/* * {
-    border: 1px solid black;
-} */
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+
+
+* {
+    font-family: 'Roboto';
+}
 
 .grid-container {
     display:grid;
@@ -23,12 +40,13 @@
 }
 
 svg.logo {
-    width: 60px;
+    width: min(50px,30%);
     margin-left: 5px;
+    
 }
 
 svg.icon {
-    width: 50px;
+    width: 35px;
 }
 
 svg {
@@ -39,15 +57,16 @@ svg {
 
 .menu-item {
     display: flex;
+    margin-bottom: 10px;
 }
 
 h1 {
-    font-size: min(2rem, 3vw);
+    font-size: min(1.5rem, 2.5vw);
 }
 
 h2 {
     margin: 5px 0px;
-    font-size: min(1.5rem, 2.5vw);
+    font-size: min(1rem, 2vw);
 }
 
 
@@ -69,6 +88,8 @@ h3,h4 {
     grid-column: 2;
     display: grid;
     grid-template-columns: 2fr 1fr;
+    border-top: 3px solid #b8bfc5;
+    ;
 }
 
 .projects-panel {
@@ -88,6 +109,12 @@ h3,h4 {
 
 /* Header */
 
+.header {
+    margin-bottom: 4px;  
+    padding: 0px 10px;
+  
+
+}
 
 .search-bar {
     display: flex;
@@ -95,29 +122,48 @@ h3,h4 {
 
 .search-bar>svg {
     width: 30px;
+    margin-left: 40px;
+}
+
+
+.search-bar>* {
+    margin: 0px 10px;
+}
+
+
+.search-bar>p {
+    font-weight: bold;
+    align-self: center;
+    margin-right: 40px;
 }
 
 .search-text {
     flex: 1;
+    max-width: 700px;
     border-radius: 10px;
     margin: 10px;
+    background-color: #e2e8f0;
+    border: none;
 }
 
-.avatar-placeholder {
-    width: 80px;
-    height: 80px;
+svg.notification-bell {
+    margin-left: auto;
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     background-color: red;
 }
 
-.search-bar>.avatar-placeholder {
-    width: 50px;
-    height: 50px;
+.search-bar>.avatar {
+    width: 45px;
+    height: 45px;
 }
 
 .welcome-bar {
     display: flex;
-    margin: 0px 10px;
     align-items: center;
     gap: 10px;
 }
