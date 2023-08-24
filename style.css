@@ -14,22 +14,26 @@
 }
 
 
-
 * {
     font-family: 'Roboto';
+}
+
+body {
+    margin: 0px;
 }
 
 .grid-container {
     display:grid;
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 150px 1fr;
 }
 
 .sidebar {
     grid-column: 1;
     grid-row: 1 / 999;
     background-color: #1992d4;
-    color:white
+    color: white;
+    height: 100vh;
 }
 
 .logo-container,
@@ -40,7 +44,7 @@
 }
 
 svg.logo {
-    width: min(50px,30%);
+    width: 50px;
     margin-left: 5px;
     
 }
@@ -71,8 +75,8 @@ h2 {
 
 
 h3,h4 {
-    margin: 5px 0px;
-    /* font-size: min(1.rem, 2.5vw); */
+    margin: 0px;
+    font-size: min(1rem, 3vw);
 }
 
 
@@ -110,19 +114,17 @@ h3,h4 {
 /* Header */
 
 .header {
-    margin-bottom: 4px;  
-    padding: 0px 10px;
-  
-
+    padding: 0px 1vw;
 }
 
 .search-bar {
     display: flex;
+    margin: 1vh 1vw;
 }
 
 .search-bar>svg {
     width: 30px;
-    margin-left: 40px;
+    margin-left: min(1vw, 20px);
 }
 
 
@@ -134,10 +136,11 @@ h3,h4 {
 .search-bar>p {
     font-weight: bold;
     align-self: center;
-    margin-right: 40px;
+    margin-right: 20px;
 }
 
-.search-text {
+
+input.search-text {
     flex: 1;
     max-width: 700px;
     border-radius: 10px;
@@ -154,7 +157,6 @@ svg.notification-bell {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background-color: red;
 }
 
 .search-bar>.avatar {
@@ -178,9 +180,35 @@ svg.notification-bell {
 button {
     color:white;
     background-color: #1992d4;
-    border-radius: 20px;
+    border-radius: 16px;
     border: none;
-    height: 40px;
+    height: 35px;
     flex-basis: 80px;
+    font-weight: bold;
+    min-width: 30px;
+    font-size: min(1rem, 2vw);
 
 }
+
+
+@media screen and (max-width: 800px) {
+    .search-bar>p  {
+      display: none;
+    }
+    svg.logo {
+        width: 50px;
+        margin-left: 0px;   
+    }
+  }
+
+@media screen and (max-width: 600px) {
+    .logo-container>h1,
+    .menu>.menu-item>h2 {
+      display: none;
+    }
+
+    .grid-container {
+        grid-template-columns: 60px 1fr;
+    }
+
+  }
