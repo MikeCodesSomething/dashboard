@@ -25,7 +25,7 @@ body {
 .grid-container {
     display:grid;
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: 150px 1fr;
+    grid-template-rows: 160px 1fr;
 }
 
 /* Sidebar */
@@ -42,7 +42,7 @@ body {
 .menu-item {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 20px;
 }
 
 .logo-container:hover,
@@ -52,12 +52,13 @@ body {
 
 svg.logo {
     width: 50px;
-    margin-left: 5px;
+    margin-left: 15px;
     
 }
 
 svg.icon {
     width: 35px;
+    margin-left: 15px;
 }
 
 svg {
@@ -73,22 +74,22 @@ svg {
 }
 
 h1 {
-    font-size: min(1.5rem, 2.5vw);
+    font-size: min(1.5rem, 2.75vw);
 }
 
 h2 {
     margin: 5px 0px;
-    font-size: min(1rem, 2vw);
+    font-size: min(1.33rem, 2.5vw);
 }
 
 h3 {
     margin: 0px;
-    font-size: min(1.33rem, 3vw);
+    font-size: min(1.33rem, 2.25vw);
 }
 
 h4 {
     margin: 0px;
-    font-size: min(1rem, 3vw);
+    font-size: min(1rem, 2vw);
 }
 
 
@@ -103,7 +104,7 @@ h4 {
     background-color: #e2e8f0;
     grid-column: 2;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr min(300px, 35vw);
     grid-template-rows: 1fr;
     border-top: 3px solid #b8bfc5;
     padding: 10px;
@@ -116,35 +117,46 @@ h4 {
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(200px,1fr) );
-    gap: 20px;
+    grid-template-columns: repeat( auto-fit, minmax(280px,1fr) );
+    gap: 25px;
     margin: 10px;
+    margin-left: 0px;
+    margin-right: 15px;
 }
 
 .card {
-    height: 150px;
+    height: 160px;
     background-color: white;
     border-left: 8px solid #f0b429;
     border-radius: 5px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     display: grid;
-    grid-template-rows: 1fr 30px;
+    grid-template-rows: 30px 1fr 30px;
     padding: 10px;
-    margin-left: -10px;
+    /* margin-left: -10px; */
 }
 
 .card:hover {
     outline: 2px solid lightblue;
   }
 
+.subtext {
+    color: rgb(97, 94, 94);
+    font-size: 0.9rem;
+}
+
 .icon-container {
     justify-self: right;
 }
 
 .icon-container>.icon {
-    opacity: 80%;
+    opacity: 70%;
     width: 25px;
     padding:5px;
+}
+
+.icon-container>.icon:hover {
+    opacity: 100%;
 }
 
 .right-panel {
@@ -155,6 +167,7 @@ h4 {
 
 .announcement-container {
     margin: 10px;
+    margin-left: 0px;
     padding: 20px 10px;
     /* height: 85%; */
     display: grid;
@@ -166,12 +179,12 @@ h4 {
 }
 
 .announcement {
-    border-top: 1px solid gray   ;
+    border-top: 1px solid rgb(197, 195, 195)   ;
     width: 80%;
     padding: 10px;
 }
 
-.announcement-text {
+.announcement>.subtext {
     font-size: 0.75rem;
 }
 
@@ -181,6 +194,7 @@ h4 {
 
 .trending-container {
     margin: 10px;
+    margin-left: 0px;
     padding: 20px 10px;
     background-color: white;
     border-radius: 5px;
@@ -195,6 +209,7 @@ h4 {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 10px;
 
 }
 
@@ -248,22 +263,22 @@ svg.notification-bell {
 }
 
 .avatar {
-    width: 70px;
-    min-width: 70px;
-    height: 70px;
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.search-bar>.avatar {
-    min-width: 45px;
-    height: 45px;
+.greet-container>.avatar {
+    width: 70px;
+    min-width: 70px;
+    height: 70px;
 }
 
 .welcome-bar {
     display: flex;
     align-items: center;
-    /* justify-content: space-evenly; */
     gap: 2vw;
 }
 
@@ -272,6 +287,7 @@ svg.notification-bell {
     display:flex;
     flex-direction: column;
     justify-content: center;
+    /* word-break: break-all; */
 }
 
 .greet-container {
@@ -294,17 +310,7 @@ button {
 }
 
 
-@media screen and (max-width: 800px) {
-    .search-bar>p  {
-      display: none;
-    }
-    svg.logo {
-        width: 50px;
-        margin-left: 0px;   
-    }
-  }
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 850px) {
     .logo-container>h1,
     .menu>.menu-item>h2 {
       display: none;
@@ -313,5 +319,32 @@ button {
     .grid-container {
         grid-template-columns: 60px 1fr;
     }
+
+    .search-bar>p  {
+      display: none;
+    }
+    svg.logo {
+        width: 50px;
+        min-width: 50px;
+        margin-left: 0px;   
+    }
+    svg.icon {
+        margin-left: 0px;   
+    }
+  }
+
+@media screen and (max-width: 600px) {
+
+    .main-content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 1fr;
+    }
+
+    .right-panel {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+
 
   }
